@@ -9,7 +9,7 @@
       user:
         name: "{{ created_username }}"
         state: present
-        groups: sudo
+        groups: sudo, docker
         append: yes
 
     - name: Set up sudoers
