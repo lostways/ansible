@@ -1,2 +1,3 @@
 ---
 deploy_username: deploy
+deploy_base_dir: /opt/apps

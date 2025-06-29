@@ -12,3 +12,11 @@
     user: "{{ deploy_username }}"
     state: present
     key: "{{ deploy_ssh_key }}"
+
+- name: Create deployment directory
+  file:
+    path: "{{ deploy_base_dir }}"
+    state: directory
+    owner: "{{ deploy_username }}"
+    group: "{{ deploy_username }}"
+    mode: '0755'
