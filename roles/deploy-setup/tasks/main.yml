@@ -1,0 +1,14 @@
+---
+- name: Create deploy user
+  user:
+    name: "{{ deploy_username }}"
+    state: present
+    groups: docker
+    append: yes
+    shell: /bin/bash
+
+- name: Set up deploy user ssh keys
+  ansible.posix.authorized_key:
+    user: "{{ deploy_username }}"
+    state: present
+    key: "{{ deploy_ssh_key }}"

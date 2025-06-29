@@ -1,0 +1,3 @@
+---
+created_username: "{{ username | default(lookup('env', 'USER')) }}"
+ssh_public_key: "{{ ssh_key | default(lookup('file', lookup('env', 'HOME') + '/.ssh/id_rsa.pub')) }}"
